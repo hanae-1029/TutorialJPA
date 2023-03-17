@@ -60,9 +60,8 @@ public class CountryController {
 
     // ----- 削除画面 -----
     @GetMapping(value = { "/delete", "/delete/{code}" })
-    public String deleteCountryForm(@PathVariable(name = "code") String code, Model model) {
-        Country country = code != null ? service.getCountry(code) : new Country();
-        model.addAttribute("country", country);
+    public String deleteCountryForm(@PathVariable(name = "code", required = false) String code, Model model) {
+        model.addAttribute("code", code);
         return "country/delete";
     }
 
