@@ -45,4 +45,9 @@ public class CountryService {
     public void deleteCountry(String code) {
         repository.deleteById(code);
     }
+
+    public static Country findById(long code) {
+        // TODO 自動生成されたメソッド・スタブ
+        return null;
+    }
 }
